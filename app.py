@@ -12,7 +12,8 @@ from linebot.models import *
 app = Flask(__name__)
 #config = configparser.ConfigParser()
 #config.read("config.ini")
-pi = LineBotApi('gMDQJch7y6DV/xjii15ZEFFU6QAB8VjdYyfXSk7iOa2Kf0/aRe9GdX0RIZ1RL6sPpeDwnsi3A5HAGGu+l32g/HLBngA9ggD36uLHHX8J2sT7fJv+06VmmXuI2OufP6+iEYQ1mOqZITsQuE5Ff5eOvwdB04t89/1O/w1cDnyilFU=')
+# Channel Access Token
+line_bot_api = LineBotApi('gMDQJch7y6DV/xjii15ZEFFU6QAB8VjdYyfXSk7iOa2Kf0/aRe9GdX0RIZ1RL6sPpeDwnsi3A5HAGGu+l32g/HLBngA9ggD36uLHHX8J2sT7fJv+06VmmXuI2OufP6+iEYQ1mOqZITsQuE5Ff5eOvwdB04t89/1O/w1cDnyilFU=')
 # Channel Secret
 handler = WebhookHandler('2e4768d8bc7eab05157afac571717500')
 
