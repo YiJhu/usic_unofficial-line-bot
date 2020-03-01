@@ -1,4 +1,4 @@
-import configparser
+#import configparser
 from flask import Flask, request, abort
 
 from linebot import (
@@ -10,10 +10,11 @@ from linebot.exceptions import (
 from linebot.models import *
 
 app = Flask(__name__)
-config = configparser.ConfigParser()
-config.read("config.ini")
-line_bot_api = LineBotApi(config['line_bot']['Channel_Access_Token'])
-handler = WebhookHandler(config['line_bot']['Channel_Secret'])
+#config = configparser.ConfigParser()
+#config.read("config.ini")
+pi = LineBotApi('gMDQJch7y6DV/xjii15ZEFFU6QAB8VjdYyfXSk7iOa2Kf0/aRe9GdX0RIZ1RL6sPpeDwnsi3A5HAGGu+l32g/HLBngA9ggD36uLHHX8J2sT7fJv+06VmmXuI2OufP6+iEYQ1mOqZITsQuE5Ff5eOvwdB04t89/1O/w1cDnyilFU=')
+# Channel Secret
+handler = WebhookHandler('2e4768d8bc7eab05157afac571717500')
 
 
 @app.route("/callback", methods=['POST'])
@@ -35,11 +36,11 @@ def callback():
     return 'OK'
 
 
-#@handler.add(MessageEvent, message=TextMessage)
-#def handle_message(event):
-    #line_bot_api.reply_message(
-        #event.reply_token,
-        #TextSendMessage(text=event.message.text))
+@handler.add(MessageEvent, message=TextMessage)
+def handle_message(event):
+    line_bot_api.reply_message(
+        event.reply_token,
+        TextSendMessage(text=event.message.text))
 
 
 @handler.add(MessageEvent, message=TextMessage)
