@@ -1,4 +1,7 @@
-# μ'sic♪
+# μ'sic♪ bot
+  ```
+     This bot was originally made for a line music_game group.
+  ```
 
 ### The old program,so just make it public.
 
